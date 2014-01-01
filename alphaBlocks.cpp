@@ -61,6 +61,7 @@ int main(){
     CBox* myBox = new CBox(0.f,0.f,0.f,0.f,glm::vec3(1,1,1),1.f);
     CBox* myBox2 = new CBox(10.f,0.f,0.f,45.f,glm::vec3(1,1,1), 0.2f);
     // Our ModelViewProjection : multiplication of our 3 matrices
+
     //glm::mat4 MVP        = camera->getPerspective() * camera->getView() * Model;// Remember, matrix multiplication is the other way around
     glm::mat4 MVP        = camera->getPerspective() * camera->getView() * myBox->getModelMatrix();
     glm::mat4 MVP2       = camera->getPerspective() * camera->getView() * myBox2->getModelMatrix();
