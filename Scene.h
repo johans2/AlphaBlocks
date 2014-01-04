@@ -7,10 +7,10 @@
 
 class CScene{
 public:
-    CScene() {}
-    ~CScene() {}
-    void        render(){}
-    void        update(){}
+    CScene();
+    ~CScene();
+    void        render();
+    void        update();
     void        addSceneObject(ISceneObject* sceneObject){}
     void        removeSceneObject(){}
     CCamera*    getCamera(){return mCamera;}

@@ -66,7 +66,7 @@ int main(){
     glm::mat4 MVP        = camera->getPerspective() * camera->getView() * myBox->getModelMatrix();
     glm::mat4 MVP2       = camera->getPerspective() * camera->getView() * myBox2->getModelMatrix();
     // Load the texture using any two methods
-    GLuint Texture = loadBMP_custom("uvtemplate.bmp");
+    GLuint Texture = loadBMP_custom("brick_texture.bmp");
     //GLuint Texture = loadDDS("uvtemplate.DDS");
 
     // Get a handle for our "myTextureSampler" uniform
