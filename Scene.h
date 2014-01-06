@@ -8,17 +8,21 @@
 
 class CScene{
 public:
-    CScene();
+    CScene(std::string sceneId);
     ~CScene();
-    void                    Render();
+    void                    Enter();
+    void                    Exit();
     void                    Update();
     void                    AddSceneObject(ISceneObject* sceneObject);
     void                    RemoveSceneObject();
-    CCamera*                GetCamera(){return mCamera;}
-    void                    UpdateCamera();
+    const CCamera*          GetCamera() const{ return mCamera; }
     const std::string&      GetSceneId() const{ return mSceneId; }
 
+
 private:
+    void                            Render();
+    void                            BindObjectBuffers();
+    void                            UnbindObjectBuffers();
     std::string                     mSceneId;
     CCamera*                        mCamera;
     std::vector<ISceneObject*>      mSceneObjects;

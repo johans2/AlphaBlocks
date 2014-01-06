@@ -6,6 +6,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform.hpp>
 #include <array>
+#include <string>
 
 class CBox : public ISceneObject
 {
@@ -31,6 +32,7 @@ public:
     //return by const reference really the best way to go?
 
 private:
+
     glm::mat4                   mModelMatrix;
     glm::vec3                   mScale;
     float                       mRotation;
