@@ -10,23 +10,24 @@ CScene::~CScene()
 {
 }
 
-void CScene::render()
+void CScene::Render()
 {
 }
 
-void CScene::update()
+void CScene::Update()
 {
 }
 
-void CScene::addSceneObject(ISceneObject *sceneObject)
+void CScene::AddSceneObject(ISceneObject *sceneObject)
+{
+    mSceneObjects.push_back(sceneObject);
+}
+
+void CScene::RemoveSceneObject()
 {
 }
 
-void CScene::removeSceneObject()
-{
-}
-
-void CScene::updateCamera()
+void CScene::UpdateCamera()
 {
 }
 

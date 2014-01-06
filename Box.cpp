@@ -49,18 +49,18 @@ CBox::CBox(float posX, float posY, float posZ, float rotation, glm::vec3 rotatio
 CBox::~CBox(){
 }
 
-void CBox::setScale(const glm::vec3 &value){
+void CBox::SetScale(const glm::vec3 &value){
     mScale = value;
     mModelMatrix = glm::scale(mModelMatrix, mScale);
 }
 
-void CBox::setRotation(float rotation, const glm::vec3 &rotationAxis){
+void CBox::SetRotation(float rotation, const glm::vec3 &rotationAxis){
     mRotation = rotation;
     mRotationAxis = rotationAxis;
     mModelMatrix = glm::rotate(mModelMatrix, mRotation, mRotationAxis);
 }
 
-void CBox::setTranslation(const glm::vec3 &value){
+void CBox::SetTranslation(const glm::vec3 &value){
     mTranslation = value;
     mModelMatrix = glm::translate(mModelMatrix, mTranslation);
 }

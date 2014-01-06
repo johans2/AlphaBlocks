@@ -32,7 +32,7 @@ int main(){
         return -1;
     }
 
-    glfwSetWindowTitle( "Tutorial 05" );
+    glfwSetWindowTitle( "AlphaBlocks" );
 
     // Ensure we can capture the escape key being pressed below
     glfwEnable( GLFW_STICKY_KEYS );
@@ -63,10 +63,10 @@ int main(){
     // Our ModelViewProjection : multiplication of our 3 matrices
 
     //glm::mat4 MVP        = camera->getPerspective() * camera->getView() * Model;// Remember, matrix multiplication is the other way around
-    glm::mat4 MVP        = camera->getPerspective() * camera->getView() * myBox->getModelMatrix();
-    glm::mat4 MVP2       = camera->getPerspective() * camera->getView() * myBox2->getModelMatrix();
+    glm::mat4 MVP        = camera->GetPerspective() * camera->GetView() * myBox->GetModelMatrix();
+    glm::mat4 MVP2       = camera->GetPerspective() * camera->GetView() * myBox2->GetModelMatrix();
     // Load the texture using any two methods
-    GLuint Texture = loadBMP_custom("brick_texture.bmp");
+    GLuint Texture = loadBMP_custom("bricks.bmp");
     //GLuint Texture = loadDDS("uvtemplate.DDS");
 
     // Get a handle for our "myTextureSampler" uniform
@@ -77,23 +77,23 @@ int main(){
     GLuint vertexbuffer;
     glGenBuffers(1, &vertexbuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-    glBufferData(GL_ARRAY_BUFFER, *myBox->getVertexBufferDataSize(), &(myBox->getVertexBufferData())[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, *myBox->GetVertexBufferDataSize(), &(myBox->GetVertexBufferData())[0], GL_STATIC_DRAW);
 
     GLuint uvbuffer;
     glGenBuffers(1, &uvbuffer);
     glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
-    glBufferData(GL_ARRAY_BUFFER, *myBox->getUVBufferDataSize(), &(myBox->getUVBufferData())[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, *myBox->GetUVBufferDataSize(), &(myBox->GetUVBufferData())[0], GL_STATIC_DRAW);
 
     //box 2
     GLuint vertexbuffer2;
     glGenBuffers(1, &vertexbuffer2);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer2);
-    glBufferData(GL_ARRAY_BUFFER, *myBox2->getVertexBufferDataSize(), &(myBox2->getVertexBufferData())[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, *myBox2->GetVertexBufferDataSize(), &(myBox2->GetVertexBufferData())[0], GL_STATIC_DRAW);
 
     GLuint uvbuffer2;
     glGenBuffers(1, &uvbuffer2);
     glBindBuffer(GL_ARRAY_BUFFER, uvbuffer2);
-    glBufferData(GL_ARRAY_BUFFER, *myBox2->getUVBufferDataSize(), &(myBox2->getUVBufferData())[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, *myBox2->GetUVBufferDataSize(), &(myBox2->GetUVBufferData())[0], GL_STATIC_DRAW);
 
 
 

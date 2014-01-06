@@ -13,19 +13,19 @@ public:
     CBox(float posX, float posY, float posZ, float roation, glm::vec3 rotationAxis, float scale);
     ~CBox();
     void MandatoryFunc(){} //remove this shit
-    const float*                    getVertexBufferData() const { return mVertexBufferData; }
-    const float*                    getUVBufferData() const { return mUVBufferData; }
-    const int*                      getUVBufferDataSize() { return &mUVBufferDataSize; }
-    const int*                      getVertexBufferDataSize() { return &mVertexBufferDataSize; }
+    const float*                    GetVertexBufferData() const { return mVertexBufferData; }
+    const float*                    GetUVBufferData() const { return mUVBufferData; }
+    const int*                      GetUVBufferDataSize() { return &mUVBufferDataSize; }
+    const int*                      GetVertexBufferDataSize() { return &mVertexBufferDataSize; }
 
-    const glm::vec3&                getScale() const{ return mScale; }
-    void                            setScale(const glm::vec3 &scale);
-    float                           getRotation() const { return mRotation; }
-    void                            setRotation(float rotation, const glm::vec3 &rotationAxis);
-    const glm::vec3&                getRotationAxis() const { return mRotationAxis; }
-    const glm::vec3&                getTranslation() const { return mTranslation; }
-    void                            setTranslation(const glm::vec3 &translation);
-    const glm::mat4&                getModelMatrix() const { return mModelMatrix; }
+    const glm::vec3&                GetScale() const{ return mScale; }
+    void                            SetScale(const glm::vec3 &scale);
+    float                           GetRotation() const { return mRotation; }
+    void                            SetRotation(float rotation, const glm::vec3 &rotationAxis);
+    const glm::vec3&                GetRotationAxis() const { return mRotationAxis; }
+    const glm::vec3&                GetTranslation() const { return mTranslation; }
+    void                            SetTranslation(const glm::vec3 &translation);
+    const glm::mat4&                GetModelMatrix() const { return mModelMatrix; }
 
     //reserach further the best returntype for getModelMatrix etc. Is
     //return by const reference really the best way to go?
@@ -36,7 +36,7 @@ private:
     float                       mRotation;
     glm::vec3                   mRotationAxis;
     glm::vec3                   mTranslation;
-    float                       mVertexBufferData[108];
+    float                       mVertexBufferData[108]; //this is kind of wierd, setting size like this
     int                         mVertexBufferDataSize;
     float                       mUVBufferData[72];
     int                         mUVBufferDataSize;

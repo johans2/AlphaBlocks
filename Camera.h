@@ -16,22 +16,22 @@ public:
             );
 
     ~CCamera();
-    float               getFow() const{ return mFow; }
-    void                setFow(float value) {mFow = value; }
-    float               getRatio() const { return mRatio; }
-    void                setRatio(float value) { mRatio = value; }
-    float               getClippingPlaneNear() const { return mClippingPlaneNear; }
-    void                setClippingPlaneNear(float value) { mClippingPlaneNear = value; }
-    float               getClippingPlaneFar() const { return mClippingPlaneFar; }
-    void                setClippingPlaneFar(float value) { mClippingPlaneFar = value; }
-    const glm::vec3&    getCameraPosWorldSpace() const { return mCameraPosWorldSpace; }
-    void                setCameraPosWorldSpace(const glm::vec3 &value) { mCameraPosWorldSpace = value; }
-    const glm::vec3&    getLookAtDirection() const { return mLookAtDirection; }
-    void                setLookAtDirection(const glm::vec3 &value) { mLookAtDirection = value; }
-    const glm::vec3&    getHeadDirection() const { return mHeadDirection; }
-    void                setHeadDirection(const glm::vec3 &value) { mHeadDirection = value; }
-    const glm::mat4&    getPerspective() const { return mPerspective; }
-    const glm::mat4&    getView() const { return mView; }
+    float               GetFow() const{ return mFow; }
+    void                SetFow(float value) {mFow = value; }
+    float               GetRatio() const { return mRatio; }
+    void                SetRatio(float value) { mRatio = value; }
+    float               GetClippingPlaneNear() const { return mClippingPlaneNear; }
+    void                SetClippingPlaneNear(float value) { mClippingPlaneNear = value; }
+    float               GetClippingPlaneFar() const { return mClippingPlaneFar; }
+    void                SetClippingPlaneFar(float value) { mClippingPlaneFar = value; }
+    const glm::vec3&    GetCameraPosWorldSpace() const { return mCameraPosWorldSpace; }
+    void                SetCameraPosWorldSpace(const glm::vec3 &value) { mCameraPosWorldSpace = value; }
+    const glm::vec3&    GetLookAtDirection() const { return mLookAtDirection; }
+    void                SetLookAtDirection(const glm::vec3 &value) { mLookAtDirection = value; }
+    const glm::vec3&    GetHeadDirection() const { return mHeadDirection; }
+    void                SetHeadDirection(const glm::vec3 &value) { mHeadDirection = value; }
+    const glm::mat4&    GetPerspective() const { return mPerspective; }
+    const glm::mat4&    GetView() const { return mView; }
     void                UpdateCamera();
 
 private:
