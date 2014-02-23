@@ -11,7 +11,6 @@ public:
     CGame();
     ~CGame();
     void Update();
-    void RenderScene(CScene* scene);
     void addScene(CScene*);
     void removeScene(CScene*);
     void setCurrentScene();

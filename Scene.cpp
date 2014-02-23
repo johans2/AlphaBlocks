@@ -1,7 +1,8 @@
 #include "Scene.h"
 
-CScene::CScene(std::string sceneId ) :
-    mSceneId(sceneId)
+CScene::CScene(std::string sceneId, CCamera *camera) :
+    mSceneId(sceneId),
+    mCamera(camera)
 {
 
 
@@ -10,6 +11,9 @@ CScene::CScene(std::string sceneId ) :
 
 CScene::~CScene()
 {
+    for(int i=0; i<mSceneObjects.size(); ++i){
+        delete mSceneObjects[i];
+    }
 }
 
 void CScene::Enter()
@@ -45,7 +49,16 @@ void CScene::Render()
 void CScene::BindObjectBuffers()
 {
     for(int i=0; i<mSceneObjects.size(); ++i){
-        //Crate and bind the vertexdata and UVdata buffers
+        //Crate and bind vertex buffer
+        glGenBuffers(1, mSceneObjects[i]->GetVertexBuffer());
+        glBindBuffer(GL_ARRAY_BUFFER, *mSceneObjects[i]->GetVertexBuffer());
+        glBufferData(GL_ARRAY_BUFFER, *mSceneObjects[i]->GetVertexBufferDataSize(), &(mSceneObjects[i]->GetVertexBufferData())[0], GL_STATIC_DRAW);
+
+        //Create and bind UV buffer
+        glGenBuffers(1, mSceneObjects[i]->GetUVBuffer());
+        glBindBuffer(GL_ARRAY_BUFFER, *mSceneObjects[i]->GetUVBuffer());
+        glBufferData(GL_ARRAY_BUFFER, *mSceneObjects[i]->GetUVBufferDataSize(), &(mSceneObjects[i]->GetUVBufferData())[0], GL_STATIC_DRAW);
+
     }
 }
 

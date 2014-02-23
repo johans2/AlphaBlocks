@@ -2,23 +2,19 @@
 #define _ALPHABLOCKS_BOX_H_
 
 #include "SceneObject.h"
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtx/transform.hpp>
-#include <array>
-#include <string>
+
 
 class CBox : public ISceneObject
 {
 public:
     CBox(float posX, float posY, float posZ, float roation, glm::vec3 rotationAxis, float scale);
     ~CBox();
-    void MandatoryFunc(){} //remove this shit
+    GLuint*                         GetVertexBuffer() { return &mVertexBuffer; }
+    GLuint*                         GetUVBuffer() { return &mUVBuffer; }
     const float*                    GetVertexBufferData() const { return mVertexBufferData; }
     const float*                    GetUVBufferData() const { return mUVBufferData; }
     const int*                      GetUVBufferDataSize() { return &mUVBufferDataSize; }
     const int*                      GetVertexBufferDataSize() { return &mVertexBufferDataSize; }
-
     const glm::vec3&                GetScale() const{ return mScale; }
     void                            SetScale(const glm::vec3 &scale);
     float                           GetRotation() const { return mRotation; }
@@ -38,6 +34,8 @@ private:
     float                       mRotation;
     glm::vec3                   mRotationAxis;
     glm::vec3                   mTranslation;
+    GLuint                      mVertexBuffer;
+    GLuint                      mUVBuffer;
     float                       mVertexBufferData[108]; //this is kind of wierd, setting size like this
     int                         mVertexBufferDataSize;
     float                       mUVBufferData[72];

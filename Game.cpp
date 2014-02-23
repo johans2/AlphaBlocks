@@ -13,9 +13,6 @@ CGame::~CGame(){
 void CGame::Update(){
 }
 
-void CGame::RenderScene(CScene* /*scene*/){
-}
-
 void CGame::addScene(CScene *){
 }
 

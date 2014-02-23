@@ -58,8 +58,8 @@ int main(){
 
     CCamera* camera = new CCamera(45.0f, 4.0f / 3.0f, 0.1f, 100.0f, glm::vec3(4,3,3), glm::vec3(0,0,0), glm::vec3(0,1,0));
 
-    CBox* myBox = new CBox(0.f,0.f,0.f,0.f,glm::vec3(1,1,1),1.f);
-    CBox* myBox2 = new CBox(10.f,0.f,0.f,45.f,glm::vec3(1,1,1), 0.2f);
+    ISceneObject* myBox = new CBox(0.f,0.f,0.f,0.f,glm::vec3(1,1,1),1.f);
+    ISceneObject* myBox2 = new CBox(10.f,0.f,0.f,45.f,glm::vec3(1,1,1), 0.2f);
     // Our ModelViewProjection : multiplication of our 3 matrices
 
     //glm::mat4 MVP        = camera->getPerspective() * camera->getView() * Model;// Remember, matrix multiplication is the other way around
@@ -72,7 +72,7 @@ int main(){
     // Get a handle for our "myTextureSampler" uniform
     GLuint TextureID  = glGetUniformLocation(programID, "myTextureSampler");
 
-
+    //GÖR DETTA FÖR VARJE OBJECT I RENDER SCENE
     //box 1
     GLuint vertexbuffer;
     glGenBuffers(1, &vertexbuffer);

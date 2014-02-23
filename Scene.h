@@ -8,7 +8,7 @@
 
 class CScene{
 public:
-    CScene(std::string sceneId);
+    CScene(std::string sceneId, CCamera* camera);
     ~CScene();
     void                    Enter();
     void                    Exit();
